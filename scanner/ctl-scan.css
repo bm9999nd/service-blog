@@ -1,0 +1,24 @@
+.scanner {
+    height: auto;
+    width: 300px;
+    min-height: 200px;
+    border-radius: 1rem;
+    background-color: black;
+}
+
+.scanner video {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.player {
+    --btn-sz: 85px;
+    width: var(--btn-sz);
+    height: var(--btn-sz);
+}
+
+#result {
+    font-family: monospace;
+    color: gray;
+}
