@@ -18,7 +18,7 @@
     <div id="i-player" class="fixed-bottom d-grid justify-content-center mb-3"></div>
 
     <script>
-        $.ajax('../template/scanner.html').done(res => {
+        $.ajax('./ctl-scan.html').done(res => {
             $('body').append(res);
             $('#i-scanner').html($('#reader'));
             $('#i-result').html($('#result'));
