@@ -175,7 +175,7 @@
             }
         }
 
-        function scanning(camId, videoId, resultId, eventName = "scanned", singleScan = true) {
+        function scanning(camId, videoId, resultId, eventName = "scanned", singleScan = false) {
             const html5QrCode = new Html5Qrcode(videoId, false);
             const result = $(`#${resultId}`);
 
@@ -238,7 +238,7 @@
         $("#result").on("scanned", e => {
             console.info('decoded text:\n', e.detail.text, 'decoded result:\n', e.detail.result);
             const c = $(e.target);
-            c.html(e.detail.result);
+            c.html(e.detail.text);
         });
 
         $(document).on(eventScanName, e => {
