@@ -142,6 +142,12 @@ const scanner = {
     };
   },
   
+  setupScanner: function () {
+      scanner.scanner = scanner.scanning(scanner.lastCamId, "reader", "result");
+      console.log("Status:", scanner.scanner);
+      scanner.scanner.start();
+  },
+
   init: function () {
     $(document).on(scanner.eventScannedName, (e) => {
       console.info(
@@ -179,21 +185,22 @@ const scanner = {
       }
     });
     
-    $(document).on(modal.eventName, (e) => {
-      const camId = e.detail;
-      if (scanner.lastCamId == "") scanner.lastCamId = camId;
-      scanner.scanner = scanner.scanning(scanner.lastCamId, "reader", "result");
-    
-      console.log("Status:", scanner.scanner);
-      scanner.scanner.start();
-    });
-    
     $("button.player").on("click", (e) => {
       if (typeof scanner.scanner != "undefined") {
         scanner.scanner.stop();
-        scanner.lastScanned = "";
-      } else scanner.getCamera();
+      } else {
+        if (scanner.lastCamId == "") scanner.getCamera();
+        else this.setupScanner();
+      }
     });
+    
+    $(document).on(modal.eventName, (e) => {
+      const camId = e.detail;
+      scanner.lastCamId = camId;
+      this.setupScanner();
+    });
+
+
   },
 };
 
