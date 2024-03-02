@@ -82,8 +82,21 @@
                 vc.fadeToggle(1000, 'swing');
                 vid.animate({
                     height: isScan ? '50vh' : 0
-                }, 1000, 'swing');
-                location.href = isScan ? "#i-scanner" : "#gse";
+                }, 1000, 'swing', () => {
+                    if (isScan) {
+                        vid[0].scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                            inline: "start",
+                        });
+                    } else {
+                        gse[0].scrollIntoView({
+                            behavior: "auto",
+                            block: "start",
+                            inline: "start",
+                        });
+                    }
+                });
             }
             function onGetScanned(e) {
                 const res = e.detail.text;
