@@ -73,7 +73,6 @@ const scanner = {
   
   scanning: function (camId, videoId, resultId, singleScan = false) {
     const qrCode = new Html5Qrcode(videoId, false);
-    const result = $(`#${resultId}`);
   
     function start() {
       try {
@@ -93,7 +92,7 @@ const scanner = {
             // do something when code is ready
             if (decodedText == scanner.lastScanned) return;
   
-            result[0].dispatchEvent(
+            $(document).dispatchEvent(
               new CustomEvent(scanner.eventScannedName, {
                 detail: {
                   text: decodedText,
@@ -144,7 +143,7 @@ const scanner = {
   },
   
   init: function () {
-    $("#result").on(scanner.eventScannedName, (e) => {
+    $(document).on(scanner.eventScannedName, (e) => {
       console.info(
         "decoded text:\n",
         e.detail.text,
@@ -182,8 +181,8 @@ const scanner = {
     
     $(document).on(modal.eventName, (e) => {
       const camId = e.detail;
-      if (this.lastCamId == "") this.lastCamId = camId;
-      scanner.scanner = scanner.scanning(this.lastCamId, "reader", "result");
+      if (scanner.lastCamId == "") scanner.lastCamId = camId;
+      scanner.scanner = scanner.scanning(scanner.lastCamId, "reader", "result");
     
       console.log("Status:", scanner.scanner);
       scanner.scanner.start();
