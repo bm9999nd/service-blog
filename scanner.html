@@ -276,7 +276,10 @@
         });
 
         $('button.player').on("click", e => {
-            if (typeof scanner != "undefined") scanner.stop();
+            if (typeof scanner != "undefined") {
+                scanner.stop();
+                lastScanned = "";
+            }
             else getCamera();
         });
 
