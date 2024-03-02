@@ -75,13 +75,13 @@ const scanner = {
     const qrCode = new Html5Qrcode(videoId, false);
   
     function start() {
+      document.dispatchEvent(
+        new CustomEvent(scanner.eventStateName, {
+          detail: true,
+        })
+      );
+
       try {
-        document.dispatchEvent(
-          new CustomEvent(scanner.eventStateName, {
-            detail: true,
-          })
-        );
-  
         qrCode.start(
           camId,
           {
