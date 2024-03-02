@@ -53,6 +53,7 @@ const scanner = {
   eventScannedName: "scanned",
   eventStateName: "scanState",
   lastScanned: "",
+  lastCamId: "",
   scanner: undefined,
   
   getCamera: async function () {
@@ -181,7 +182,8 @@ const scanner = {
     
     $(document).on(modal.eventName, (e) => {
       const camId = e.detail;
-      scanner.scanner = scanner.scanning(camId, "reader", "result");
+      if (this.lastCamId == "") this.lastCamId = camId;
+      scanner.scanner = scanner.scanning(this.lastCamId, "reader", "result");
     
       console.log("Status:", scanner.scanner);
       scanner.scanner.start();

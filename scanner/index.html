@@ -15,17 +15,29 @@
     <div id="i-scanner" class="d-grid justify-content-center mt-3"></div>
     <div id="i-result" class="d-grid justify-content-center mb-3"></div>
 
-    <script async src="https://cse.google.com/cse.js?cx=a674544fa519d4d0d"></script>
-    <div class="gcse-searchresults-only"></div>
+    <script async src="https://cse.google.com/cse.js?cx=a674544fa519d4d0d">
+    </script>
+    <div class="gcse-search"></div>
 
-    <div id="i-player" class="fixed-bottom d-grid justify-content-center my-3"></div>
+    <div id="i-player" class="fixed-bottom d-grid justify-content-center py-2"></div>
 
     <style>
+        #i-player {
+            --bg-col: rgba(0,0,0, 0.25);
+            backdrop-filter: blur(5px);
+            filter: drop-shadow(2px 4px 6px black);
+            background-color: var(--bg-col);
+            box-shadow: 0 0 5px 10px var(--bg-col);
+        }
         .gsc-control-cse {
-            border-radius: 1rem;
+            border-radius: 0.5rem;
             border: 1px solid dimgray;
-            background-color: rgba(0, 0, 0, 0.25);
-            mix-blend-mode: darken;
+            /* background-color: rgba(0, 0, 0, 0.25);
+            mix-blend-mode: hard-light; */
+            margin-bottom: 10rem;
+        }
+        .gsc-input-box {
+            border-radius: var(--bs-border-radius-pill);
         }
     </style>
     <script>
