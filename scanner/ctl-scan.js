@@ -52,9 +52,9 @@ const modal = {
 const scanner = {
   eventScannedName: "scanned",
   eventStateName: "scanState",
+  scanner: undefined,
   lastScanned: "",
   lastCamId: "",
-  scanner: undefined,
   
   getCamera: async function () {
     try {
@@ -71,7 +71,7 @@ const scanner = {
     }
   },
   
-  scanning: function (camId, videoId, resultId, singleScan = false) {
+  scanning: function (camId, videoId, singleScan = false) {
     const qrCode = new Html5Qrcode(videoId, false);
   
     function start() {
@@ -92,7 +92,7 @@ const scanner = {
             // do something when code is ready
             if (decodedText == scanner.lastScanned) return;
   
-            $(document).dispatchEvent(
+            document.dispatchEvent(
               new CustomEvent(scanner.eventScannedName, {
                 detail: {
                   text: decodedText,
@@ -123,6 +123,7 @@ const scanner = {
     async function stop() {
       try {
         await qrCode.stop();
+        scanner.lastScanned = "";
 
         // QR Code scanning is stopped.
         document.dispatchEvent(
@@ -143,12 +144,13 @@ const scanner = {
   },
   
   setupScanner: function () {
-      scanner.scanner = scanner.scanning(scanner.lastCamId, "reader", "result");
+      scanner.scanner = scanner.scanning(scanner.lastCamId, "reader");
       console.log("Status:", scanner.scanner);
       scanner.scanner.start();
   },
 
   init: function () {
+    // on get scanned
     $(document).on(scanner.eventScannedName, (e) => {
       console.info(
         "decoded text:\n",
@@ -158,10 +160,10 @@ const scanner = {
       );
       $("#audio")[0].play();
 
-      const c = $(e.target);
-      c.html(e.detail.text);
+      const result = $("#result");
+      result.html(e.detail.text);
     });
-    
+    // on scan state changed
     $(document).on(scanner.eventStateName, (e) => {
       const isPlay = e.detail;
       const btn = $("button.player");
@@ -184,7 +186,7 @@ const scanner = {
         icon.toggleClass(img.stopIcon, isPlaying);
       }
     });
-    
+    // on scan clicked
     $("button.player").on("click", (e) => {
       if (typeof scanner.scanner != "undefined") {
         scanner.scanner.stop();
@@ -193,14 +195,12 @@ const scanner = {
         else this.setupScanner();
       }
     });
-    
+    // on camera selected
     $(document).on(modal.eventName, (e) => {
       const camId = e.detail;
       scanner.lastCamId = camId;
       this.setupScanner();
     });
-
-
   },
 };
 
