@@ -5,9 +5,15 @@
 <div id="reader" class="scanner shadow"></div>
 
 <!-- controller -->
-<button id="player" type="button" class="btn btn-primary rounded-circle player">
+<button id="player" type="button" class="btn btn-primary rounded-circle d-grid align-items-center player">
     <i class="bi bi-qr-code-scan display-5"></i>
 </button>
+<div id="torch" class="form-check">
+    <input id="light" name="light" type="checkbox" class="btn-check">
+    <label for="light" class="btn rounded-circle d-grid align-items-center torch">
+        <i class="bi display-5"></i>
+    </label>
+</div>
 
 <!-- result -->
 <small id="result">
