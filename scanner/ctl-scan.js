@@ -1,1 +1,285 @@
-var _0x1d011b=_0x288a;(function(_0x57f346,_0x2a18c4){var _0x451d90=_0x288a,_0x376947=_0x57f346();while(!![]){try{var _0x2d1bc3=parseInt(_0x451d90(0x119))/0x1+parseInt(_0x451d90(0xec))/0x2*(-parseInt(_0x451d90(0x116))/0x3)+-parseInt(_0x451d90(0xfc))/0x4+-parseInt(_0x451d90(0xf1))/0x5+parseInt(_0x451d90(0xdf))/0x6*(-parseInt(_0x451d90(0xf2))/0x7)+parseInt(_0x451d90(0x123))/0x8+parseInt(_0x451d90(0x109))/0x9;if(_0x2d1bc3===_0x2a18c4)break;else _0x376947['push'](_0x376947['shift']());}catch(_0x4782fd){_0x376947['push'](_0x376947['shift']());}}}(_0x180a,0x5b174));const modal={'eventName':_0x1d011b(0x103),'getModal':new bootstrap['Modal'](_0x1d011b(0x105),{'backdrop':!0x0,'focus':!0x0,'keyboard':!0x0}),'renderModal':function(_0x69f906=[]){var _0x454649=_0x1d011b;const _0x14a465=$(_0x454649(0x105)),_0x2d1fdc=_0x14a465['find'](_0x454649(0xed));_0x2d1fdc[_0x454649(0x128)]()[_0x454649(0x10b)](),_0x69f906['forEach'](_0x46fef7=>{var _0x1b7ef9=_0x454649,_0x4d16fb=$($('#tmp-radio')['clone']()[_0x1b7ef9(0x10c)]()),_0x1d1075=_0x46fef7['id'];_0x4d16fb[_0x1b7ef9(0x11e)]('label')['attr'](_0x1b7ef9(0x114),_0x1d1075)[_0x1b7ef9(0x10c)](_0x46fef7[_0x1b7ef9(0xf6)]),_0x4d16fb['find'](_0x1b7ef9(0xe7))[_0x1b7ef9(0x115)]('id',_0x1d1075)[_0x1b7ef9(0xe1)](_0x1d1075)['on'](_0x1b7ef9(0xe7),_0x51cfe0=>{var _0x2817d6=_0x1b7ef9;_0x14a465[_0x2817d6(0x11e)](_0x2817d6(0x11a))[_0x2817d6(0xf0)](_0x2817d6(0xf9),!0x1);}),_0x4d16fb[_0x1b7ef9(0x113)](_0x2d1fdc);}),modal[_0x454649(0x11b)][_0x454649(0x12b)]();},'init':()=>{var _0x491df5=_0x1d011b;$(_0x491df5(0xe2))['on']('click',_0x5e2c7b=>{var _0x56a9eb=_0x491df5,_0x1c2056=$(_0x56a9eb(0x122))[_0x56a9eb(0xe1)]();null!=_0x1c2056?(document[_0x56a9eb(0xe9)](new CustomEvent(modal['eventName'],{'detail':_0x1c2056})),modal[_0x56a9eb(0x11b)][_0x56a9eb(0x10e)]()):alert('Camera\x20not\x20selected!');});}},scanner={'eventScannedName':'scanned','eventStateName':_0x1d011b(0xde),'scanner':void 0x0,'lastScanned':'','lastCamId':'','getCamera':async function(){var _0x2c7261=_0x1d011b;try{var _0x403001=await Html5Qrcode[_0x2c7261(0x124)]();if(!_0x403001||0x0==_0x403001[_0x2c7261(0xf7)])return console[_0x2c7261(0x101)](_0x2c7261(0x126));console[_0x2c7261(0x120)]('Cameras:\x0a',_0x403001),modal[_0x2c7261(0x12a)](_0x403001);}catch(_0x473d69){alert(_0x473d69[_0x2c7261(0xff)]);}},'scanning':function(_0x2b849d,_0x579a09,_0x55aa52=!0x1){const _0x322798=new Html5Qrcode(_0x579a09,!0x1);async function _0x23eca2(){var _0x507e86=_0x288a;try{await _0x322798['stop'](),scanner['lastScanned']='',document['dispatchEvent'](new CustomEvent(scanner[_0x507e86(0x108)],{'detail':!0x1}));}catch(_0x5332b7){}}return{'start':async function(){var _0x2aefb5=_0x288a;try{var _0x52da14=(await navigator[_0x2aefb5(0x117)][_0x2aefb5(0x100)]({'video':{'deviceId':_0x2b849d}}))[_0x2aefb5(0x127)]()[0x0][_0x2aefb5(0xfa)]();$('#'+_0x579a09)[_0x2aefb5(0x11c)](_0x2aefb5(0x106),_0x52da14[_0x2aefb5(0x106)])['css'](_0x2aefb5(0xee),_0x52da14[_0x2aefb5(0xee)]),_0x322798[_0x2aefb5(0x111)](_0x2b849d,{'fps':0xa,'qrbox':{'width':0xfa,'height':0xfa}},(_0x2be1a1,_0x39ea4c)=>{var _0x3d492d=_0x2aefb5;_0x2be1a1!=scanner['lastScanned']&&(document[_0x3d492d(0xe9)](new CustomEvent(scanner['eventScannedName'],{'detail':{'text':_0x2be1a1,'result':_0x39ea4c}})),scanner['lastScanned']=_0x2be1a1,_0x55aa52)&&_0x23eca2();},_0x400c81=>{}),$('#torch\x20input')[_0x2aefb5(0xfe)](_0x2aefb5(0xe7)),document[_0x2aefb5(0xe9)](new CustomEvent(scanner[_0x2aefb5(0x108)],{'detail':!0x0}));}catch(_0x1b0e3a){console[_0x2aefb5(0xf3)]('failed\x20to\x20start\x20camera:\x0a',_0x1b0e3a),document[_0x2aefb5(0xe9)](new CustomEvent(scanner[_0x2aefb5(0x108)],{'detail':!0x1})),alert(_0x1b0e3a[_0x2aefb5(0xff)]);}},'stop':_0x23eca2,'torch':async function(_0x752ea){var _0x2f8868=_0x288a;try{scanner[_0x2f8868(0xfd)][_0x2f8868(0x121)]['applyVideoConstraints']({'advanced':[{'torch':_0x752ea}]});}catch(_0x54a7e5){throw _0x54a7e5;}},'qrCode':_0x322798};},'setupScanner':function(){var _0x58401a=_0x1d011b;scanner[_0x58401a(0xfd)]=scanner['scanning'](scanner[_0x58401a(0x112)],_0x58401a(0xe0)),console[_0x58401a(0x120)](_0x58401a(0xf8),scanner[_0x58401a(0xfd)]),scanner[_0x58401a(0xfd)][_0x58401a(0x111)]();},'init':function(){var _0x346872=_0x1d011b;$(document)['on'](scanner[_0x346872(0xe3)],_0x5777fe=>{var _0x50b8ab=_0x346872;console[_0x50b8ab(0xef)]('decoded\x20text:\x0a',_0x5777fe[_0x50b8ab(0xeb)][_0x50b8ab(0xfb)],_0x50b8ab(0xea),_0x5777fe[_0x50b8ab(0xeb)][_0x50b8ab(0x10f)]),$('#audio')[0x0][_0x50b8ab(0xe6)](),$('#result')['html'](_0x5777fe['detail'][_0x50b8ab(0xfb)]);}),$(document)['on'](scanner['eventStateName'],_0x21facd=>{var _0x2d02d9=_0x346872;_0x21facd=_0x21facd['detail'];const _0x5c2864=$('button.player');_0x21facd||(scanner[_0x2d02d9(0xfd)]=void 0x0),function(_0x3cc5f1){var _0x4f33b6=_0x2d02d9;const _0x409cfa=_0x5c2864['find']('i'),_0x307da1='btn-primary',_0x94c629='btn-danger',_0x365179=_0x4f33b6(0xdc),_0x4fdca6=_0x4f33b6(0xe4);_0x5c2864[_0x4f33b6(0xf4)](_0x307da1,!_0x3cc5f1),_0x409cfa[_0x4f33b6(0xf4)](_0x365179,!_0x3cc5f1),_0x5c2864[_0x4f33b6(0xf4)](_0x94c629,_0x3cc5f1),_0x409cfa[_0x4f33b6(0xf4)](_0x4fdca6,_0x3cc5f1);}(_0x21facd);}),$(_0x346872(0x118))['on'](_0x346872(0x102),_0x51c6f6=>{var _0x294357=_0x346872;void 0x0!==scanner['scanner']?scanner['scanner']['stop']():''==scanner[_0x294357(0x112)]?scanner[_0x294357(0x129)]():this['setupScanner']();}),$(_0x346872(0x110))['on'](_0x346872(0xe7),async _0x3c9b94=>{var _0x143539=_0x346872,_0x167966=_0x3c9b94[_0x143539(0x11f)][_0x143539(0x10d)];if(void 0x0!==scanner['scanner'])try{await scanner['scanner'][_0x143539(0x11d)](_0x167966),_0x36ac62(_0x167966);}catch(_0x3b7832){_0x36ac62(_0x3c9b94['target'][_0x143539(0x10d)]=!0x1);}else _0x36ac62(_0x3c9b94[_0x143539(0x11f)][_0x143539(0x10d)]=!0x1);function _0x36ac62(_0x4a2e9e){var _0x599dc0=_0x143539,_0x5bf2a2=$(_0x599dc0(0xdd)),_0x5bf2a2=(_0x5bf2a2[_0x599dc0(0xf4)](_0x599dc0(0x10a),_0x4a2e9e),_0x5bf2a2[_0x599dc0(0xf4)](_0x599dc0(0xe5),!_0x4a2e9e),$('#torch\x20i'));_0x5bf2a2['toggleClass'](_0x599dc0(0xe8),_0x4a2e9e),_0x5bf2a2['toggleClass']('bi-sunset',!_0x4a2e9e);}})['trigger'](_0x346872(0xe7)),$(document)['on'](modal['eventName'],_0x36ddbe=>{var _0xfee69d=_0x346872;_0x36ddbe=_0x36ddbe[_0xfee69d(0xeb)],(scanner['lastCamId']=_0x36ddbe,this['setupScanner']());});}};$[_0x1d011b(0x104)]('https://unpkg.com/html5-qrcode')[_0x1d011b(0x107)](_0x2b1be6=>{var _0x41abcc=_0x1d011b;modal[_0x41abcc(0xf5)](),scanner['init'](),document[_0x41abcc(0xe9)](new CustomEvent(_0x41abcc(0x125)));});function _0x288a(_0x56443d,_0x96c0b1){var _0x180a2a=_0x180a();return _0x288a=function(_0x288a05,_0x3fcc81){_0x288a05=_0x288a05-0xdc;var _0x1fcff2=_0x180a2a[_0x288a05];return _0x1fcff2;},_0x288a(_0x56443d,_0x96c0b1);}function _0x180a(){var _0x448b17=['target','log','qrCode','#modal-cam\x20[name=\x27camera\x27]:checked','3458696yZHOLi','getCameras','scanLoaded','no\x20camera\x20found!','getTracks','children','getCamera','renderModal','show','bi-qr-code-scan','#torch\x20label','scanState','5910PrqUSZ','reader','val','#modal-cam\x20.btn-primary','eventScannedName','bi-stop-fill','btn-dark','play','input','bi-sun-fill','dispatchEvent','decoded\x20result:\x0a','detail','2jLEmFm','.cam-select','height','info','prop','1594400sttRTp','2471iJUpff','warn','toggleClass','init','label','length','Status:','disabled','getSettings','text','474084pLPwYP','scanner','trigger','message','getUserMedia','error','click','camSelect','getScript','#modal-cam','width','done','eventStateName','9321066RvGJxK','btn-light','remove','html','checked','hide','result','#torch\x20input','start','lastCamId','appendTo','for','attr','2045406iBiOdG','mediaDevices','#player','372005DFUYWb','.btn-primary','getModal','css','torch','find'];_0x180a=function(){return _0x448b17;};return _0x180a();}
+const events = {
+  qrLoaded: () => document.dispatchEvent(new CustomEvent("scanLoaded")),
+  scanStateChanged: (state, qr) => {
+    document.dispatchEvent(
+      new CustomEvent("scanState", {
+        detail: {
+          state: state,
+          qr: qr,
+        }
+      })
+    );
+  },
+  torchChanged: (state) => {
+    document.dispatchEvent(
+      new CustomEvent("torchState", {
+        detail: state,
+      })
+    );
+  },
+  getScanned: (decodedText, decodedResult) => {
+    document.dispatchEvent(
+      new CustomEvent("scanned", {
+        detail: {
+          text: decodedText,
+          result: decodedResult,
+        },
+      })
+    );
+  },
+  getCameraId: (deviceId) => {
+    document.dispatchEvent(
+      new CustomEvent("camSelect", {
+        detail: deviceId,
+      })
+    );
+  },
+};
+
+// --- modal
+const modal = {
+  getModal: new bootstrap.Modal("#modal-cam", {
+    backdrop: true,
+    focus: true,
+    keyboard: true,
+  }),
+
+  renderModal: function (items = []) {
+    const mod = $("#modal-cam");
+    const ul = mod.find(".cam-select");
+    ul.children().remove();
+
+    items.forEach((item) => {
+      const li = $($("#tmp-radio").clone().html());
+      const id = item.id;
+      li.find("label").attr("for", id).html(item.label);
+      li.find("input")
+        .attr("id", id)
+        .val(id)
+        .on("input", (e) => {
+          const btn = mod.find(".btn-primary");
+          btn.prop("disabled", false);
+        });
+      li.appendTo(ul);
+    });
+
+    modal.getModal.show();
+  },
+
+  init: () => {
+    $("#modal-cam .btn-primary").on("click", (e) => {
+      const sel = $("#modal-cam [name='camera']:checked").val();
+
+      if (sel != null) {
+        events.getCameraId(sel);
+        modal.getModal.hide();
+      } else {
+        alert("Camera not selected!");
+      }
+    });
+  },
+};
+
+// --- scanner
+const scanner = {
+  scanner: undefined,
+  lastScanned: "",
+  lastCamId: "",
+
+  getCamera: async function () {
+    try {
+      const devices = await Html5Qrcode.getCameras();
+      if (!devices || devices.length == 0) {
+        return console.error("no camera found!");
+      }
+
+      console.log("Cameras:\n", devices);
+      modal.renderModal(devices);
+    } catch (error) {
+      alert(error.message);
+    }
+  },
+
+  scanning: function (camId, videoId, singleScan = false) {
+    const qrCode = new Html5Qrcode(videoId, false);
+
+    async function start() {
+      try {
+        const vid = await navigator.mediaDevices.getUserMedia({
+          video: { deviceId: camId },
+        });
+        const settings = vid.getTracks()[0].getSettings();
+
+        qrCode.start(
+          camId,
+          {
+            fps: 10, // Optional, frame per seconds for qr code scanning
+            qrbox: { width: 250, height: 250 }, // Optional, if you want bounded box UI
+          },
+          (decodedText, decodedResult) => {
+            // do something when code is ready
+            if (decodedText == scanner.lastScanned) return;
+
+            events.getScanned(decodedText, decodedResult);
+            scanner.lastScanned = decodedText;
+
+            if (singleScan) stop();
+          },
+          (errorMessage) => {
+            // parse error, ignore it.
+          }
+        );
+
+        $("#torch input").trigger("input"); // apply current flashlight state
+        events.scanStateChanged(true, qrCode); // tell if camera succeeded running
+
+      } catch (err) {
+        // Start failed, handle it.
+        console.warn("failed to start camera:\n", err);
+        events.scanStateChanged(false);
+        alert(err.message);
+      }
+    }
+
+    async function stop() {
+      try {
+        await qrCode.stop();
+        scanner.lastScanned = "";
+
+        // QR Code scanning is stopped.
+        events.scanStateChanged(false);
+      } catch (err) {
+        // Stop failed, handle it.
+      }
+    }
+
+    async function torch(state) {
+      try {
+        scanner.scanner.qrCode.applyVideoConstraints({
+          advanced: [{ torch: state }],
+        });
+      } catch (error) {
+        throw error;
+      }
+    }
+
+    return {
+      start,
+      stop,
+      torch,
+      qrCode,
+    };
+  },
+
+  setupScanner: function () {
+    scanner.scanner = scanner.scanning(scanner.lastCamId, "reader");
+    console.log("Status:", scanner.scanner);
+    scanner.scanner.start();
+  },
+
+  init: function () {
+    // on get scanned
+    $(document).on("scanned", (e) => {
+      console.info(
+        "decoded text:\n",
+        e.detail.text,
+        "decoded result:\n",
+        e.detail.result
+      );
+      $("#audio")[0].play();
+
+      const result = $("#result");
+      result.html(e.detail.text);
+    });
+    // on scan state changed
+    $(document).on("scanState", (e) => {
+      const isPlay = e.detail.state;
+      const btn = $("button.player");
+
+      if (!isPlay) scanner.scanner = undefined;
+      setCss(isPlay);
+
+      function setCss(isPlaying) {
+        const icon = btn.find("i");
+        const img = {
+          playBtn: "btn-primary",
+          stopBtn: "btn-danger",
+          playIcon: "bi-qr-code-scan",
+          stopIcon: "bi-stop-fill",
+        };
+
+        btn.toggleClass(img.playBtn, !isPlaying);
+        icon.toggleClass(img.playIcon, !isPlaying);
+        btn.toggleClass(img.stopBtn, isPlaying);
+        icon.toggleClass(img.stopIcon, isPlaying);
+
+        $("#controllers > div")
+        .toggleClass("justify-content-between", isPlaying)
+        .toggleClass("justify-content-around", !isPlaying);
+        
+        if (isPlaying) {
+          $("#torch").show("fast");
+          $("#vid-container")
+          .fadeIn("fast", () => {
+            $("#vid-container").css("display", "grid");
+          });
+        }
+        else {
+          $("#torch").hide("slow");
+          $("#vid-container").fadeOut("slow");
+        }
+      }
+    });
+    // on scan clicked
+    $("#player").on("click", (e) => {
+      if (typeof scanner.scanner != "undefined") {
+        scanner.scanner.stop();
+      } else {
+        if (scanner.lastCamId == "") scanner.getCamera();
+        else this.setupScanner();
+      }
+    });
+    // on torch clicked
+    $("#torch input").on("input", async (e) => {
+      const check = e.target.checked;
+
+      if (typeof scanner.scanner != "undefined") {
+        try {
+          await scanner.scanner.torch(check);
+          toggle(check);
+        } catch (error) {
+          e.target.checked = false;
+          toggle(false);
+        }
+      } else {
+        e.target.checked = false;
+        toggle(false);
+      }
+
+      function toggle(state) {
+        const btn = $("#torch label");
+        btn.toggleClass("btn-light", state);
+        btn.toggleClass("btn-dark", !state);
+
+        const icon = $("#torch i");
+        icon.toggleClass("bi-sun-fill", state);
+        icon.toggleClass("bi-sunset", !state);
+
+        events.torchChanged(state);
+      }
+    }).trigger("input");
+
+    // on camera selected
+    $(document).on("camSelect", (e) => {
+      const camId = e.detail;
+      scanner.lastCamId = camId;
+      this.setupScanner();
+    });
+  },
+};
+
+$.getScript("https://unpkg.com/html5-qrcode").done((res) => {
+  modal.init();
+  scanner.init();
+  events.qrLoaded();
+});

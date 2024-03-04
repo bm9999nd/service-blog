@@ -1,0 +1,67 @@
+:root {
+    --drop-shadow-100: drop-shadow(2px 4px 6px rgba(0, 0, 0, 1));
+    --drop-shadow-25: drop-shadow(2px 4px 6px rgba(141, 141, 141, 0.5));
+}
+
+.item-view .btn-primary {
+    display: block !important;
+}
+#i-controller {
+    --bg-col: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+    filter: var(--drop-shadow-25);
+    /* background-color: var(--bg-col); */
+    box-shadow: 0 0 20px 20px var(--bg-col);
+}
+#i-scanner {
+    background-color: transparent;
+}
+#i-result {
+    position: relative;
+    z-index: 1;
+}
+#result {
+    color: white !important;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+#gse {
+    /* position: absolute; */
+    transition: all 1s ease-in-out;
+    margin-inline-end: 1rem;
+}
+#gse.on-scan {
+    transform: translateY(0);
+}
+#gse:not(.on-scan) {
+    transform: translateY(50%);
+}
+#gse:has(.gsc-results-wrapper-visible):not(.on-scan) {
+    transform: translateY(0);
+}
+
+.gsc-control-cse {
+    border-radius: 0.5rem;
+    margin-bottom: 10rem;
+    filter: var(--drop-shadow-25);
+}
+
+.gsc-input-box {
+    background-color: white;
+    padding-top: 6px;
+    padding-bottom: 5px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+td.gsc-input {
+    padding-right: 0 !important;
+}
+
+@media screen and (max-width: 600px) {
+    button[class*='gsc-search-button'] {
+        padding-block: 14px;
+        width: auto;
+        margin: 0;
+    }
+}

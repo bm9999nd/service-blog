@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Scanner</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+</head>
+<body class="container vh-100" data-bs-theme="light">
+    <div class="d-grid h-100 position-relative">
+        <div id="i-container" style="display: none;">
+            <div id="i-scanner" class="d-grid justify-content-center mt-3" style="height: 0;"></div>
+            <div id="i-result" class="d-grid justify-content-center mb-3"></div>
+        </div>
+    
+        <div id="gse">
+            <script async src="https://cse.google.com/cse.js?cx=a674544fa519d4d0d">
+            </script>
+            <div class="gcse-search"></div>
+        </div>
+    
+        <div class="sticky-bottom d-inline-grid align-content-end">
+            <div id="i-controller" class="py-2 d-flex justify-content-around"></div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="./gse.css">
+    <script type="text/javascript" src="./gse.js"></script>
+</body>
+</html>
