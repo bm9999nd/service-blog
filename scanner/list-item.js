@@ -40,19 +40,13 @@ rows.forEach((item) => {
 ctl.search.on("input", (e) => {
   const val = $(e.target).val().toLowerCase();
   // tbl
-  const row = ctl.tbl.find("tbody tr:not([id=info])");
-  const info = ctl.tbl.find("tbody tr#info");
-  const filter = row.find("td").filter((i, el) => {
-    const n = $(el).index();
-    let match = $(el).html().toLowerCase().includes(val);
-    // if (n > 1) match = false;
-    return match;
-  });
+  const row = ctl.tbl.find("[data-key]").parents(".row");
+  const filter = row.find("[data-key=barcode],[data-key=nama]").filter((i, el) => {
+      let match = $(el).html().toLowerCase().includes(val);
+      return match;
+    });
   row.hide();
-  filter.parent("tr").show();
-
-  if (filter.length == 0) info.show();
-  else info.hide();
+  filter.parents(".row").show();
 });
 ctl.chkImg.on("input", e => {
   const check = e.target.checked;
