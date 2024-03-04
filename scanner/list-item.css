@@ -1,1 +1,1 @@
-.cursor-pointer *{cursor:pointer}.item-view .btn-primary{display:block !important}#qr-shaded-region{border-radius:0}#datatable img{object-fit:cover;object-position:center}span,td,th,label:not([class*=btn-]):not([class*=form-]){pointer-events:none;user-select:none}
+.cursor-pointer *{cursor:pointer}.text-justify-last{text-align-last:justify}.item-view .btn-primary{display:block !important}#qr-shaded-region{border-radius:0}#datatable img{object-fit:cover;object-position:center}span,td,th,label:not([class*=btn-]):not([class*=form-]){pointer-events:none;user-select:none}
